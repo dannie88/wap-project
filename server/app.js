@@ -1,10 +1,14 @@
 const express = require('express');
 const productRouter = require('./routes/productRouter');
 const cors = require('cors');
+const path = require('path');
 const app = express();
+
 
 app.use(cors());
 app.use(express.json());
+
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/products', productRouter);
 
 
