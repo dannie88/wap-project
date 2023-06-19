@@ -1,12 +1,12 @@
-const productModel = require('../data/models/product.model');
+const productModel = require('../models/product');
 
-exports.getAll = (req, res)=>{
-    res.status(200).json({ message: 'Retrived successfully', data: productModel.findAll() });
+exports.fetchAll = (req, res) => {
+    res.status(200).json({ message: 'Retrived successfully', data: productModel.fetchAll() });
 }
 
-exports.getOne = (req, res)=> {
+exports.findById = (req, res) => {
     const productId = parseInt(req.params.productId);
-    const product = productModel.findOne(productId);
+    const product = productModel.findById(productId);
     if (!product) {
         res.status(404).json({ message: 'Product not found' });
     } else {
@@ -14,7 +14,7 @@ exports.getOne = (req, res)=> {
     }
 }
 
-exports.placeOrder = (req, res)=> {
+exports.placeOrder = (req, res) => {
     const orderItems = req.body;
     productModel.updateStocks(orderItems);
 
