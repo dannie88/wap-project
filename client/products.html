@@ -12,20 +12,20 @@
 </head>
 
 <body>
-    <div class="bg-warning text-dark shadow">
+    <div class="bg-light text-dark shadow">
         <div class="d-flex justify-content-between p-3 ">
             <div class="">
-                <img src="http://localhost:3001/public/images/logo.png" class="img-fluid" style="width:60px;" />
+                <img src="http://localhost:3000/public/images/logo.png" class="img-fluid" style="width:60px;" />
             </div>
             <div class="pt-2">
-                <div class="d-flex">
-                    <div class="flex-fill">
+                <div class="d-flex align-items-center">
+                    <div class="flex-fill text-center">
                         <div class="p-2">
                             <h3>Welcome, <span id="username"></span></h3>
                         </div>
                     </div>
                     <div class="p-2">
-                        <button type="button" class="btn btn-primary" id="logoutBtn">Logout</button>
+                        <button type="button" class="btn btn-info" id="logoutBtn">Logout</button>
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
     </div>
     <div class="container mt-4">
         <div class="card">
-            <div class="card-header">Product List</div>
+            <div class="btn btn-info">Product List</div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-hover">
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="card mt-5">
-            <div class="card-header">Your Shopping Cart</div>
+            <div class="btn btn-info">Your Shopping Cart</div>
             <div class="card-body">
                 <h6 id="noItem">There is no item in your shopping cart! </h6>
                 <div id="hasItem">

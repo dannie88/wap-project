@@ -1,4 +1,4 @@
-const userModel = require('../data/models/user.model');
+const userModel = require('../models/user');
 
 const authenticate = function (req, res, next) {
     

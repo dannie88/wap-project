@@ -8,7 +8,7 @@ $(() => {
         } else {
             $.ajax({
                 method: 'POST',
-                url: 'http://localhost:3001/api/users/login',
+                url: 'http://localhost:3000/api/users/login',
                 data: JSON.stringify({
                     username: uname,
                     password: pass

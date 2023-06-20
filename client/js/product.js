@@ -133,7 +133,7 @@ $(() => {
 const loadProducts = function () {
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:3001/api/products',
+        url: 'http://localhost:3000/api/products',
         headers: { authorization: 'bearer ' + token },
         success: (response) => {
             console.log(response);
@@ -149,7 +149,7 @@ const loadProducts = function () {
 const fillProducts = function (products) {
     let tbody = '';
     products.forEach((p, i) => {
-        tbody += `<tr><td>${p.name}</td><td>${p.price}</td><td><img src="http://localhost:3001/public/images/${p.image}" style="width:100px;" /></td><td>${p.stock}</td><td><button class="btn btn-warning product" pid="${p.id}" title="Add to cart">  <i class="fa fa-cart-shopping"></i></button></td></tr>`;
+        tbody += `<tr><td>${p.name}</td><td>${p.price}</td><td><img src="http://localhost:3000/public/images/${p.image}" style="width:100px;" /></td><td>${p.stock}</td><td><button class="btn btn-warning product" pid="${p.id}" title="Add to cart">  <i class="fa fa-cart-shopping"></i></button></td></tr>`;
     });
     $('#tbody').html(tbody);
 }
@@ -158,7 +158,7 @@ const getProduct = function (pid) {
     return new Promise((resolve, reject) => {
         $.ajax({
             type: 'GET',
-            url: 'http://localhost:3001/api/products/' + pid,
+            url: 'http://localhost:3000/api/products/' + pid,
             headers: { authorization: 'bearer ' + token },
             success: (response) => {
                 resolve(response.data);
@@ -175,7 +175,7 @@ const placeOrder = function (order) {
     return new Promise((resolve, reject) => {
         $.ajax({
             method: 'POST',
-            url: 'http://localhost:3001/api/products/place-order',
+            url: 'http://localhost:3000/api/products/place-order',
             headers: { authorization: 'bearer ' + token },
             data: JSON.stringify(order),
             dataType: 'json',

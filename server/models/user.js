@@ -4,15 +4,16 @@ const users = [
 ];
 
 module.exports = class User {
+  
   constructor(username, password) {
     this.username = username;
     this.password = password;
   }
-  findOne = function (username, password) {
+  static findOne = function (username, password) {
     return users.find((u) => u.username == username && u.password == password);
   };
 
-  findById = function (userId) {
+  static findById = function (userId) {
     return users.find((u) => u.id == userId);
   };
 };
